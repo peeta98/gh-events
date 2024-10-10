@@ -24,7 +24,7 @@ jobs:
         run: npm run test
       - name: Build code
         run: npm run build
-      - name: Print working directory
-        run: pwd
+      - name: List files
+        run: ls -l
       - name: Deploy project
         run: echo "Deploying..."
