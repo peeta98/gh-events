@@ -2,7 +2,14 @@ name: Events Demo 1
 on:
   pull_request:
     types: opened
+    branches:
+      - main
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.github/workflows/*'
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -17,5 +24,7 @@ jobs:
         run: npm run test
       - name: Build code
         run: npm run build
+      - name: Print working directory
+        run: pwd
       - name: Deploy project
         run: echo "Deploying..."
