@@ -24,7 +24,7 @@ jobs:
         run: npm run test
       - name: Build code
         run: npm run build
-      - name: List files
-        run: ls -l
+      - name: List test file
+        run: ls ./src/components
       - name: Deploy project
         run: echo "Deploying..."
